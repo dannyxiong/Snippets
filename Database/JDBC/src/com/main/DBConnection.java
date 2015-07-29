@@ -31,7 +31,6 @@ public class DBConnection {
 	/** The Constant LOG. */
 	private static final Logger LOG = LoggerFactory.getLogger(DBConnection.class);
 
-	
 	/**
 	 * Connect to db.
 	 */
@@ -72,21 +71,19 @@ public class DBConnection {
 		Film fi = new Film();
 		connectToDB();
 		try {
-				String query = "SELECT * FROM film WHERE film_id = " + id + ";";
-				ResultSet r = connection.createStatement().executeQuery(query);
-				
-				while (r.next()) {
-					fi.setId(r.getInt("film_id"));
-					fi.setTitle(r.getString("title"));
-					fi.setDescription(r.getString("description"));
-					fi.setRentalRate(r.getDouble("rental_rate"));
-					fi.setRating(r.getString("rating"));
-				}
+			String query = "SELECT * FROM film WHERE film_id = " + id + ";";
+			ResultSet r = connection.createStatement().executeQuery(query);
+			while (r.next()) {
+				fi.setId(r.getInt("film_id"));
+				fi.setTitle(r.getString("title"));
+				fi.setDescription(r.getString("description"));
+				fi.setRentalRate(r.getDouble("rental_rate"));
+				fi.setRating(r.getString("rating"));
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 			LOG.error("Fail to request film by id = " + id);
 		} 
-
 		disconnectDB();
 		return fi;
 		
