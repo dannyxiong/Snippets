@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sakila</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.search.autoregister_listeners">false</property>
+        <property name="hibernate.validator.apply_to_ddl">false</property>
+        <mapping class="com.hibernate.Country" />
+        <mapping class="com.hibernate.FilmActor" />
+        <mapping class="com.hibernate.Peasant" />
+        <mapping class="com.hibernate.Rental" />
+        <mapping class="com.hibernate.City" />
+        <mapping class="com.hibernate.Address" />
+        <mapping class="com.hibernate.Inventory" />
+        <mapping class="com.hibernate.NicerButSlowerFilmList" />
+        <mapping class="com.hibernate.CustomerList" />
+        <mapping class="com.hibernate.SalesByFilmCategory" />
+        <mapping class="com.hibernate.Category" />
+        <mapping class="com.hibernate.StaffList" />
+        <mapping class="com.hibernate.Customer" />
+        <mapping class="com.hibernate.Payment" />
+        <mapping class="com.hibernate.FilmCategory" />
+        <mapping class="com.hibernate.ActorInfo" />
+        <mapping class="com.hibernate.FilmList" />
+        <mapping class="com.hibernate.Actor" />
+        <mapping class="com.hibernate.Staff" />
+        <mapping class="com.hibernate.Store" />
+        <mapping class="com.hibernate.SalesByStore" />
+        <mapping class="com.hibernate.Language" />
+        <mapping class="com.hibernate.FilmText" />
+        <mapping class="com.hibernate.Film" />
+    </session-factory>
+</hibernate-configuration>
