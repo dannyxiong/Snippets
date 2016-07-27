@@ -1,0 +1,13 @@
+//Generic 
+public T SelectANavigationAndClick<T>(NavigationMenu option)
+{
+    switch (option)
+    {
+        case NavigationMenu.Home:
+            homepage.Click();
+            return (T)Convert.ChangeType(new HomePage(driver), typeof(T));
+        case NavigationMenu.About:
+            aboutpage.Click();
+            return (T)Convert.ChangeType(new AboutPage(driver), typeof(T));
+    }
+}
